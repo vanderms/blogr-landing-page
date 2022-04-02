@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use './mixins' as *;
 
 .nv-navbar {
   margin: 56px math.percentage(math.div(24, 375)) 0px;
