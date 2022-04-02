@@ -36,7 +36,7 @@ export default function Navbar() {
           <NavlinkItem href="/" text="Newsletter" />
           <NavlinkItem href="/" text="LinkedIn" />
         </DropdownList>
-
+        <li className="navbar-sep" aria-hidden='true'></li>
         <NavlinkItem href="/" text="Login" className="cta-secondary" />
         <NavlinkItem href="/" text="Sign Up" className="cta-primary" />
       </ul>

@@ -9,12 +9,23 @@
   justify-content: space-between;
   align-items: center;
 
+  @include media(laptop) {
+    margin: 59px calc(50vw - 559px) 0 calc(50vw - 553px);
+    width: 1112px;
+    height: 48px;
+    gap: 64px;
+  }
+
   .logo-link {
     display: block;
 
     .logo {
       height: 32px;
       width: auto;
+
+      @include media(laptop) {
+        height: 40px;
+      }
     }
   }
 
@@ -22,6 +33,10 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+
+    @include media(laptop) {
+      display: none;
+    }
 
     &::before {
       content: '';
@@ -43,11 +58,18 @@
     max-height: 0;
     padding: 0;
     overflow: hidden;
+    @include media(laptop) {
+      max-height: unset;
+      overflow: unset;
+    }
   }
 
   .navlinks[data-state='open'] {
     max-height: calc(100vh - 125px);
     overflow-y: auto;
+    @include media(laptop) {
+      overflow-y: unset;
+    }
   }
 
   .navlinks {
@@ -56,9 +78,7 @@
     width: min(86.4%, 324px);
     margin-left: max(0px, calc(86.4% - 324px));
     float: right;
-
     transition: all 0.25s;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,6 +87,28 @@
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.243444);
     border-radius: 5px;
     padding: 24px 0 32px;
+
+    @include media(laptop) {
+      flex-direction: row;
+      position: static;
+      width: unset;
+      transition: unset;
+      padding: 0;
+      background-color: transparent;
+      flex-grow: 1;
+      margin-left: 0;
+      justify-content: flex-start;
+      box-shadow: unset;
+      gap: 32px;
+    }
+  }
+
+  .navbar-sep {
+    display: none;
+    @include media(laptop) {
+      display: block;
+      flex-grow: 1;
+    }
   }
 
   .dropdown-list {
@@ -74,6 +116,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+
+    @include media(laptop) {
+      width: auto;
+    }
   }
 
   .dropdown-label {
@@ -86,6 +133,18 @@
     align-items: center;
     gap: 8px;
 
+    @include media(laptop) {
+      font-weight: 700;
+      font-size: 16px;
+      color: #ffffff;
+      opacity: 0.75;
+      &:hover {
+        text-decoration-line: underline;
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
+
     &::after {
       content: '';
       width: 10px;
@@ -95,10 +154,21 @@
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
+
+      @include media(laptop) {
+        background-image: url(/images/icon-arrow-light.svg);
+      }
     }
 
     &[data-state='open'] {
       color: rgba(31, 62, 90, 0.75);
+
+      @include media(laptop) {
+        color: #ffffff;
+        text-decoration-line: underline;
+        opacity: 1;
+      }
+
       &::after {
         transform: rotate(180deg);
       }
@@ -109,7 +179,7 @@
     margin-top: 24px;
     overflow: hidden;
     transition: all 0.25s;
-    background: rgba(45, 46, 64, 0.08);
+    background-color: rgba(45, 46, 64, 0.08);
     width: 100%;
     border-radius: 5px;
     display: flex;
@@ -118,10 +188,25 @@
     gap: 12px;
     padding: 17px 0 25px;
 
+    @include media(laptop) {
+      background-color: white;
+      width: 168px;
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      padding: 24px;
+      align-items: flex-start;
+      box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.243444);
+      gap: 0px;
+    }
+
     &[data-state='closed'] {
       max-height: 0;
       padding: 0;
       margin: 0;
+      @include media(laptop) {
+        padding: 0 24px;
+      }
     }
 
     &[data-state='open'] {
@@ -136,6 +221,19 @@
     line-height: 28px;
     color: #1f3e5a;
     opacity: 0.75;
+
+    @include media(laptop) {
+      font-family: $ubuntu;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 33px;
+      opacity: 1;
+      color: #2d2e40;
+
+      &:hover {
+        font-weight: 700;
+      }
+    }
   }
 
   .cta-secondary {
@@ -144,17 +242,35 @@
     font-size: 18px;
     line-height: 28px;
     color: #1f3e5a;
+
+    @include media(laptop){
+      font-family: $ubuntu;
+      font-weight: 700;
+      font-size: 16px;
+      color: #FFFFFF;
+      opacity: 0.75;
+    }
   }
 
   .cta-primary {
     background: linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
     border-radius: 28px;
-    padding: 15px 40px;
+    padding: 15px 39px 15px 40px;
     font-family: $ubuntu;
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
     color: #ffffff;
     display: block;
+
+    @include media(laptop){
+      color: #FF505C;
+      background: white;
+
+      &:hover{
+        background: #FF7B86;
+        color: white;
+      }
+    }
   }
 }
