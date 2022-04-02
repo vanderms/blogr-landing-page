@@ -1,0 +1,17 @@
+@use './mixins' as *;
+
+.nv-section-product {
+  padding: 100px 0;
+  display: grid;
+  grid-template-columns: auto;
+
+  #section-product-title {
+    font-family: $overpass;    
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 35px;
+    text-align: center;
+    letter-spacing: -0.84px;
+    color: #1f3e5a;
+  }
+}
