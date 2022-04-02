@@ -1,5 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Navbar from '../components/navbar/navbar';
+import SectionHero from '../components/section-hero/section-hero';
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +15,11 @@ const Home: NextPage = () => {
         />
         <title>Frontend Mentor | [Blogr]</title>
       </Head>
-      <main>Is it working?</main>
+     <Navbar/>
+     <main>
+     <SectionHero/>
+     </main>
+     
     </>
   );
 };
