@@ -1,0 +1,48 @@
+@use './mixins' as *;
+
+.nv-footer {
+  background: #24242c;
+  border-radius: 0px 100px 0px 0px;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 75px 0;
+  gap: 40px;
+
+  .logo-link {
+    margin: 0 auto 32px;
+  }
+
+  .list-name {
+    font-family: $ubuntu;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 33px;
+
+    text-align: center;
+
+    color: #ffffff;
+  }
+
+  .navlinks-list {
+    margin-top: 21px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navlink {
+    font-family: $ubuntu;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 33px;
+    text-align: center;
+    color: #ffffff;
+    mix-blend-mode: normal;
+    opacity: 0.75;
+
+    &:hover {
+      text-decoration-line: underline;
+    }
+  }
+}
