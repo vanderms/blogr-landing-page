@@ -1,17 +1,90 @@
 @use './mixins' as *;
+@use 'sass:math';
+
+@mixin padding-container {
+  padding-inline: math.percentage(math.div(24, 375));
+}
+
+@mixin margin-container {
+  width: math.percentage(math.div(318, 375));
+  margin-inline: auto;
+}
 
 .nv-section-product {
   padding: 100px 0;
   display: grid;
   grid-template-columns: auto;
 
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
   #section-product-title {
-    font-family: $overpass;    
+    font-family: $overpass;
     font-weight: 600;
     font-size: 28px;
     line-height: 35px;
     text-align: center;
     letter-spacing: -0.84px;
     color: #1f3e5a;
+    width: 100%;
+  }
+
+  .picture-editor {
+    margin-top: 46px;
+    padding-bottom: math.percentage(math.div(331, 406));
+    position: relative;
+
+    .image-editor {
+      position: absolute;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  article{
+    @include margin-container;
+  }
+
+  .title {
+    font-family: $overpass;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 32px;
+    text-align: center;
+    color: #1f3e5a;
+  }
+
+  .text {
+    margin-top: 16px;
+    font-family: $overpass;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #4c5862;
+  }
+
+  .article-editor{
+    margin-top: 46px;
+  }
+
+  .article-content-management{
+    margin-top: 40px;
+  }
+
+  .image-phones-container{
+    margin-top: 100px;
+    padding-bottom: math.percentage(math.div(579, 552));
+    position: relative;
+
+    .image-phones {
+      position: absolute;
+      width: 100%;
+      height: auto;
+    }
   }
 }
