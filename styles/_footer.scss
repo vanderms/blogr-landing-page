@@ -8,20 +8,34 @@
   padding: 75px 0;
   gap: 40px;
 
+  @include media(laptop) {
+    padding-inline: calc(50vw - 555px);
+    padding-top: 70px;
+    padding-bottom: 70px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+  }
+
   .logo-link {
     margin: 0 auto 32px;
+
+    @include media(laptop) {
+      margin: 0;
+    }
   }
 
   .list-name {
     font-family: $ubuntu;
-
     font-weight: 500;
     font-size: 18px;
     line-height: 33px;
-
     text-align: center;
-
     color: #ffffff;
+
+    @include media(laptop){
+      font-size: 15px;
+      text-align: left;
+    }
   }
 
   .navlinks-list {
@@ -29,6 +43,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include media(laptop){
+      align-items: flex-start;
+    }
   }
 
   .navlink {
@@ -40,6 +58,11 @@
     color: #ffffff;
     mix-blend-mode: normal;
     opacity: 0.75;
+
+    @include media(laptop){
+      font-size: 15px;
+      text-align: left;
+    }
 
     &:hover {
       text-decoration-line: underline;
